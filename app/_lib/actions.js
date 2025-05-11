@@ -1,9 +1,9 @@
 "use server";
 
-import { signIn } from "./auth";
+import { signIn, signOut } from "./auth";
 
 export async function signOutAction() {
-  await fetch("/api/auth/signout", { method: "POST" });
+  await signOut({ redirectTo: "/" });
 }
 
 export async function signInAction() {
